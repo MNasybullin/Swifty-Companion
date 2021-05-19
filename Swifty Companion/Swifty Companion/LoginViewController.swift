@@ -11,17 +11,17 @@ class LoginViewController: UIViewController {
     
     // MARk: - Private Properties
     
-    @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var loginTextField: UITextField!
-    @IBOutlet private weak var searchButton: UIButton!
-
-    @IBOutlet private weak var networkActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet private var scrollView: UIScrollView!
+    @IBOutlet private var loginTextField: UITextField!
+    @IBOutlet private var searchButton: UIButton!
+    @IBOutlet private var networkActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        configureNotificationCenter()
         screenConfigure()
     }
     
