@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD03D2652593200372C2C /* AppDelegate.swift */; };
 		DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD03F2652593200372C2C /* SceneDelegate.swift */; };
-		DD4CD0422652593200372C2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD0412652593200372C2C /* ViewController.swift */; };
-		DD4CD0452652593200372C2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4CD0432652593200372C2C /* Main.storyboard */; };
+		DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD0412652593200372C2C /* LoginViewController.swift */; };
+		DD4CD0452652593200372C2C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4CD0432652593200372C2C /* Login.storyboard */; };
 		DD4CD0472652593E00372C2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD4CD0462652593E00372C2C /* Assets.xcassets */; };
 		DD4CD04A2652593E00372C2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4CD0482652593E00372C2C /* LaunchScreen.storyboard */; };
+		DD4CD05226525B4600372C2C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD05126525B4600372C2C /* Network.swift */; };
+		DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD4CD03A2652593200372C2C /* Swifty Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4CD03D2652593200372C2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD4CD03F2652593200372C2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD4CD0412652593200372C2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DD4CD0442652593200372C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD4CD0412652593200372C2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DD4CD0442652593200372C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		DD4CD0462652593E00372C2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD4CD0492652593E00372C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD4CD04B2652593E00372C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD4CD05126525B4600372C2C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		DD4CD03C2652593200372C2C /* Swifty Companion */ = {
 			isa = PBXGroup;
 			children = (
+				DD572F7A2655A12F007F26CC /* Extensions */,
 				DD4CD03D2652593200372C2C /* AppDelegate.swift */,
 				DD4CD03F2652593200372C2C /* SceneDelegate.swift */,
-				DD4CD0412652593200372C2C /* ViewController.swift */,
-				DD4CD0432652593200372C2C /* Main.storyboard */,
+				DD4CD0412652593200372C2C /* LoginViewController.swift */,
+				DD4CD05126525B4600372C2C /* Network.swift */,
+				DD4CD0432652593200372C2C /* Login.storyboard */,
 				DD4CD0462652593E00372C2C /* Assets.xcassets */,
 				DD4CD0482652593E00372C2C /* LaunchScreen.storyboard */,
 				DD4CD04B2652593E00372C2C /* Info.plist */,
 			);
 			path = "Swifty Companion";
+			sourceTree = "<group>";
+		};
+		DD572F7A2655A12F007F26CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +140,7 @@
 			files = (
 				DD4CD04A2652593E00372C2C /* LaunchScreen.storyboard in Resources */,
 				DD4CD0472652593E00372C2C /* Assets.xcassets in Resources */,
-				DD4CD0452652593200372C2C /* Main.storyboard in Resources */,
+				DD4CD0452652593200372C2C /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD4CD0422652593200372C2C /* ViewController.swift in Sources */,
+				DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */,
+				DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */,
 				DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */,
+				DD4CD05226525B4600372C2C /* Network.swift in Sources */,
 				DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,12 +162,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DD4CD0432652593200372C2C /* Main.storyboard */ = {
+		DD4CD0432652593200372C2C /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DD4CD0442652593200372C2C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		DD4CD0482652593E00372C2C /* LaunchScreen.storyboard */ = {
@@ -297,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "mn.Swifty-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,7 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "mn.Swifty-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
