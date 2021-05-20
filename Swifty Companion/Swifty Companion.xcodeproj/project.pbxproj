@@ -13,7 +13,7 @@
 		DD4CD0452652593200372C2C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4CD0432652593200372C2C /* Login.storyboard */; };
 		DD4CD0472652593E00372C2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD4CD0462652593E00372C2C /* Assets.xcassets */; };
 		DD4CD04A2652593E00372C2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4CD0482652593E00372C2C /* LaunchScreen.storyboard */; };
-		DD4CD05226525B4600372C2C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD05126525B4600372C2C /* Network.swift */; };
+		DD4CD05226525B4600372C2C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD05126525B4600372C2C /* NetworkService.swift */; };
 		DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */; };
 		DD572F9326564F98007F26CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572F9226564F98007F26CC /* ProfileViewController.swift */; };
 		DD572F9526564FA3007F26CC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD572F9426564FA2007F26CC /* Profile.storyboard */; };
@@ -28,7 +28,7 @@
 		DD4CD0462652593E00372C2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD4CD0492652593E00372C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD4CD04B2652593E00372C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD4CD05126525B4600372C2C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DD4CD05126525B4600372C2C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		DD572F9226564F98007F26CC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DD572F9426564FA2007F26CC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				DD572F8F26564F13007F26CC /* Network */,
-				DD572F8E26564EFE007F26CC /* ViewControllers */,
+				DD572F8E26564EFE007F26CC /* Modules */,
 				DD572F7A2655A12F007F26CC /* Extensions */,
 				DD4CD03D2652593200372C2C /* AppDelegate.swift */,
 				DD4CD03F2652593200372C2C /* SceneDelegate.swift */,
@@ -84,19 +84,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DD572F8E26564EFE007F26CC /* ViewControllers */ = {
+		DD572F8E26564EFE007F26CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				DD572F9126564F81007F26CC /* Profile */,
 				DD572F9026564F62007F26CC /* Login */,
 			);
-			path = ViewControllers;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		DD572F8F26564F13007F26CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DD4CD05126525B4600372C2C /* Network.swift */,
+				DD572F972656518C007F26CC /* Models */,
+				DD572F9626565182007F26CC /* Operations */,
+				DD4CD05126525B4600372C2C /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -117,6 +119,20 @@
 				DD572F9426564FA2007F26CC /* Profile.storyboard */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		DD572F9626565182007F26CC /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		DD572F972656518C007F26CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +210,7 @@
 				DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */,
 				DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */,
 				DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */,
-				DD4CD05226525B4600372C2C /* Network.swift in Sources */,
+				DD4CD05226525B4600372C2C /* NetworkService.swift in Sources */,
 				DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
