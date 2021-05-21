@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
+
     // MARk: - Private Properties
     
     @IBOutlet private var scrollView: UIScrollView!
@@ -50,6 +50,9 @@ class LoginViewController: UIViewController {
 
     @IBAction func searchButtonAction(_ sender: UIButton) {
         print("pressed")
+        if let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController {
+            navigationController?.pushViewController(viewController, animated: true)
+           }
     }
     
     // MARK: - Keyboard Notifications
