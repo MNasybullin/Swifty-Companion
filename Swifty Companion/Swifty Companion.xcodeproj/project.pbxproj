@@ -17,6 +17,11 @@
 		DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */; };
 		DD572F9326564F98007F26CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572F9226564F98007F26CC /* ProfileViewController.swift */; };
 		DD572F9526564FA3007F26CC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD572F9426564FA2007F26CC /* Profile.storyboard */; };
+		DD572FCB2657CE2D007F26CC /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FCA2657CE2D007F26CC /* AccessToken.swift */; };
+		DD572FCD2657D03F007F26CC /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FCC2657D03F007F26CC /* NetworkConstants.swift */; };
+		DD572FD02657D1B4007F26CC /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FCF2657D1B4007F26CC /* Blocks.swift */; };
+		DD572FD22657D253007F26CC /* CredentialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD12657D253007F26CC /* CredentialResponse.swift */; };
+		DD572FD42657E6C9007F26CC /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD32657E6C9007F26CC /* Credential.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		DD572F9226564F98007F26CC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DD572F9426564FA2007F26CC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		DD572FCA2657CE2D007F26CC /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		DD572FCC2657D03F007F26CC /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		DD572FCF2657D1B4007F26CC /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
+		DD572FD12657D253007F26CC /* CredentialResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialResponse.swift; sourceTree = "<group>"; };
+		DD572FD32657E6C9007F26CC /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 		DD4CD03C2652593200372C2C /* Swifty Companion */ = {
 			isa = PBXGroup;
 			children = (
+				DD572FCE2657D1A7007F26CC /* Core */,
 				DD572F8F26564F13007F26CC /* Network */,
 				DD572F8E26564EFE007F26CC /* Modules */,
 				DD572F7A2655A12F007F26CC /* Extensions */,
@@ -99,6 +110,7 @@
 				DD572F972656518C007F26CC /* Models */,
 				DD572F9626565182007F26CC /* Operations */,
 				DD4CD05126525B4600372C2C /* NetworkService.swift */,
+				DD572FCC2657D03F007F26CC /* NetworkConstants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -124,6 +136,7 @@
 		DD572F9626565182007F26CC /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				DD572FCA2657CE2D007F26CC /* AccessToken.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -131,8 +144,18 @@
 		DD572F972656518C007F26CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD572FD12657D253007F26CC /* CredentialResponse.swift */,
+				DD572FD32657E6C9007F26CC /* Credential.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DD572FCE2657D1A7007F26CC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DD572FCF2657D1B4007F26CC /* Blocks.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD572FCD2657D03F007F26CC /* NetworkConstants.swift in Sources */,
+				DD572FCB2657CE2D007F26CC /* AccessToken.swift in Sources */,
+				DD572FD22657D253007F26CC /* CredentialResponse.swift in Sources */,
 				DD572F9326564F98007F26CC /* ProfileViewController.swift in Sources */,
+				DD572FD02657D1B4007F26CC /* Blocks.swift in Sources */,
+				DD572FD42657E6C9007F26CC /* Credential.swift in Sources */,
 				DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */,
 				DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */,
 				DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */,

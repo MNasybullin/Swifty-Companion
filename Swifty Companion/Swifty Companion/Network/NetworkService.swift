@@ -8,9 +8,11 @@
 import UIKit
 
 protocol NetworkServiceProtocol {
-    
+    func getAccessToken(success: EmptyBlock?, failure: ErrorBlock?)
 }
 
 class NetworkService: NetworkServiceProtocol {
-    
+    func getAccessToken(success: EmptyBlock?, failure: ErrorBlock?) {
+        
+    }
 }
