@@ -10,27 +10,35 @@ import UIKit
 class LoginViewController: UIViewController {
 
     // MARK: - Private Properties
-    
+
+    private var output: LoginViewOutputProtocol!
+
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var loginTextField: UITextField!
     @IBOutlet private var searchButton: UIButton!
     @IBOutlet private var historyButton: UIButton!
     @IBOutlet private var networkActivityIndicator: UIActivityIndicatorView!
-    
+
+    private var login: String!
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        output = LoginViewPresenter(input: self)
+
         self.hideKeyboardWhenTappedAround()
         configureNotificationCenter()
         screenConfigure()
     }
     
     func screenConfigure() {
-        networkActivityIndicator.isHidden = true
+        networkActivityIndicator.hidesWhenStopped = true
         
         searchButton.layer.cornerRadius = 5
-        searchButton.backgroundColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.65)
+        searchButton.setBackgroundColor(color: UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.65), forState: .disabled)
+        searchButton.setBackgroundColor(color: UIColor(red: 0.25, green: 1, blue: 0.25, alpha: 0.65), forState: .normal)
         searchButton.isEnabled = false
     }
 
@@ -43,22 +51,17 @@ class LoginViewController: UIViewController {
         guard let text = sender.text else {
             return
         }
-
+        login = text
         searchButton.isEnabled = !text.isEmpty
-        if searchButton.isEnabled {
-            searchButton.backgroundColor = UIColor(red: 0.25, green: 1, blue: 0.25, alpha: 0.65)
-        } else {
-            searchButton.backgroundColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.65)
-        }
     }
 
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        print("pressed")
-        if let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController {
-            navigationController?.pushViewController(viewController, animated: true)
-           }
+        output.searchProfile(login)
+//        if let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController {
+//            navigationController?.pushViewController(viewController, animated: true)
+//           }
     }
-    
+
     // MARK: - Keyboard Notifications
 
     func configureNotificationCenter() {
@@ -97,5 +100,24 @@ class LoginViewController: UIViewController {
         scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
+}
+
+// MARK: - Input Protocol
+
+extension LoginViewController: LoginViewInputProtocol {
+    func activityIndicator(status: Bool) {
+//        DispatchQueue.main.async { [weak self] in
+//            if status == true {
+//                self?.activityIndicatorView?.startAnimating()
+//            } else {
+//                self?.activityIndicatorView?.stopAnimating()
+//            }
+//        }
+        if status == true {
+            networkActivityIndicator.startAnimating()
+        } else {
+            networkActivityIndicator.stopAnimating()
+        }
+    }
 }
 

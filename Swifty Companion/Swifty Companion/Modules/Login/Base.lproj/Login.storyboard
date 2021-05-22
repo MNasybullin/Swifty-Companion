@@ -73,6 +73,7 @@
                                                 <rect key="frame" x="169.5" y="490.5" width="75" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="75" id="clc-6A-ibB"/>
+                                                    <constraint firstAttribute="height" constant="38" id="q1S-dm-NzN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="Search">

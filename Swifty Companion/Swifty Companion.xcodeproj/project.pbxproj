@@ -22,6 +22,9 @@
 		DD572FD02657D1B4007F26CC /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FCF2657D1B4007F26CC /* Blocks.swift */; };
 		DD572FD22657D253007F26CC /* CredentialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD12657D253007F26CC /* CredentialResponse.swift */; };
 		DD572FD42657E6C9007F26CC /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD32657E6C9007F26CC /* Credential.swift */; };
+		DD572FD6265949CB007F26CC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD5265949CB007F26CC /* UIButton.swift */; };
+		DD572FD826594AFA007F26CC /* LoginViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD726594AFA007F26CC /* LoginViewProtocols.swift */; };
+		DD572FDA26594B1A007F26CC /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD926594B1A007F26CC /* LoginViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		DD572FCF2657D1B4007F26CC /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
 		DD572FD12657D253007F26CC /* CredentialResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialResponse.swift; sourceTree = "<group>"; };
 		DD572FD32657E6C9007F26CC /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		DD572FD5265949CB007F26CC /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		DD572FD726594AFA007F26CC /* LoginViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocols.swift; sourceTree = "<group>"; };
+		DD572FD926594B1A007F26CC /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */,
+				DD572FD5265949CB007F26CC /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +125,8 @@
 		DD572F9026564F62007F26CC /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DD572FD726594AFA007F26CC /* LoginViewProtocols.swift */,
+				DD572FD926594B1A007F26CC /* LoginViewPresenter.swift */,
 				DD4CD0412652593200372C2C /* LoginViewController.swift */,
 				DD4CD0432652593200372C2C /* Login.storyboard */,
 			);
@@ -229,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD572FD826594AFA007F26CC /* LoginViewProtocols.swift in Sources */,
 				DD572FCD2657D03F007F26CC /* NetworkConstants.swift in Sources */,
 				DD572FCB2657CE2D007F26CC /* AccessToken.swift in Sources */,
 				DD572FD22657D253007F26CC /* CredentialResponse.swift in Sources */,
@@ -240,6 +250,8 @@
 				DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */,
 				DD4CD05226525B4600372C2C /* NetworkService.swift in Sources */,
 				DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */,
+				DD572FD6265949CB007F26CC /* UIButton.swift in Sources */,
+				DD572FDA26594B1A007F26CC /* LoginViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
