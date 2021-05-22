@@ -9,11 +9,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    // MARk: - Private Properties
+    // MARK: - Private Properties
     
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var loginTextField: UITextField!
     @IBOutlet private var searchButton: UIButton!
+    @IBOutlet private var historyButton: UIButton!
     @IBOutlet private var networkActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life Cycle
@@ -34,6 +35,9 @@ class LoginViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @IBAction func historyButtonAction(_ sender: UIButton) {
+    }
 
     @IBAction func loginTextFieldAction(_ sender: UITextField) {
         guard let text = sender.text else {
@@ -78,9 +82,16 @@ class LoginViewController: UIViewController {
         if notification.name == UIResponder.keyboardWillHideNotification {
             scrollView.contentInset = .zero
         } else {
+            let scrollConstant: CGFloat = 50
+            var scrollHeight = keyboardViewEndFrame.minY - searchButton.frame.maxY
+            if keyboardViewEndFrame.minY < searchButton.frame.maxY {
+                scrollHeight = (scrollHeight * -1) + scrollConstant
+            } else {
+                scrollHeight = scrollConstant
+            }
             scrollView.contentInset = UIEdgeInsets(top: 0,
                                                    left: 0,
-                                                   bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom,
+                                                   bottom: scrollHeight,
                                                    right: 0)
         }
         scrollView.scrollIndicatorInsets = scrollView.contentInset
