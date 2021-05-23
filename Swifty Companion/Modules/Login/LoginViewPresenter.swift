@@ -5,16 +5,18 @@
 //  Created by OUT-Nasybullin-MR on 22.05.2021.
 //
 
-import Foundation
+import UIKit
 
 final class LoginViewPresenter: LoginViewOutputProtocol {
     // MARK: - Public Properties
 
     weak var input: LoginViewInputProtocol?
+    weak var navigationController: UINavigationController?
     private let service: NetworkService
     
-    init(input: LoginViewInputProtocol) {
+    init(input: LoginViewInputProtocol, navigationController: UINavigationController?) {
         self.input = input
+        self.navigationController = navigationController
         self.service = NetworkService()
     }
 
@@ -25,6 +27,10 @@ final class LoginViewPresenter: LoginViewOutputProtocol {
     }
 
     private func getAccessToken() {
+        if service.credential != nil || service.credential?.isExpired() == false {
+            return
+        }
+
         input?.activityIndicator(status: true)
 
         service.getAccessToken { [weak self] in
@@ -38,6 +44,12 @@ final class LoginViewPresenter: LoginViewOutputProtocol {
             }
             self?.input?.showErrorAlert(with: message)
         }
+    }
+
+    private func showProfileScreen() {
+        if let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController {
+            navigationController?.pushViewController(viewController, animated: true)
+           }
     }
 }
     

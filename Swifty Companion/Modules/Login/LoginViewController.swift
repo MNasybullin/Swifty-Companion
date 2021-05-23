@@ -25,9 +25,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        output = LoginViewPresenter(input: self)
-
+        output = LoginViewPresenter(input: self, navigationController: navigationController)
         self.hideKeyboardWhenTappedAround()
         configureNotificationCenter()
         screenConfigure()
@@ -57,9 +55,6 @@ class LoginViewController: UIViewController {
 
     @IBAction func searchButtonAction(_ sender: UIButton) {
         output.searchProfile(login)
-//        if let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController {
-//            navigationController?.pushViewController(viewController, animated: true)
-//           }
     }
 
     // MARK: - Keyboard Notifications
