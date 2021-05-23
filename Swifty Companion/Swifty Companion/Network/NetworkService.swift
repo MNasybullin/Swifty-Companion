@@ -13,6 +13,16 @@ protocol NetworkServiceProtocol {
 
 class NetworkService: NetworkServiceProtocol {
     func getAccessToken(success: EmptyBlock?, failure: ErrorBlock?) {
-        
+        let accessTokenOperation = AccessTokenOperation()
+
+        accessTokenOperation.success = { credential in
+            print("credential = ", credential)
+        }
+        accessTokenOperation.failure = { error in
+            print("error = ", error)
+        }
+
+        let operationQueue = OperationQueue()
+        operationQueue.addOperation(accessTokenOperation)
     }
 }

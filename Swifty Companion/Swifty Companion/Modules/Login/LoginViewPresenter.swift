@@ -11,15 +11,23 @@ final class LoginViewPresenter: LoginViewOutputProtocol {
     // MARK: - Public Properties
 
     weak var input: LoginViewInputProtocol?
+    private let service: NetworkService
     
     init(input: LoginViewInputProtocol) {
         self.input = input
+        self.service = NetworkService()
     }
 
     // MARK: - LoginViewOutputProtocol
 
     func searchProfile(_ login: String) {
         input?.activityIndicator(status: true)
+        service.getAccessToken {
+            
+        } failure: { error in
+            
+        }
+
     }
 }
     

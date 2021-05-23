@@ -9,31 +9,23 @@ import Foundation
 
 public struct Credential: Codable {
     enum CodingKeys: String, CodingKey {
-        case accessToken
-        case tokenType
-        case expiresIn
+        case accessToken = "access_token"
+        case tokenType = "token_type"
+        case expiresIn = "expires_in"
         case scope
-        case createdAt
+        case createdAt = "created_at"
     }
 
     let accessToken: String
     let tokenType: String
-    let expiresIn: Double
+    let expiresIn: Int
     let scope: String
-    let createdAt: Double
-
-    init(from credential: CredentialResponse) {
-        self.accessToken = credential.accessToken
-        self.tokenType = credential.tokenType
-        self.expiresIn = Double(credential.expiresIn)
-        self.scope = credential.scope
-        self.createdAt = Double(credential.createdAt)
-    }
+    let createdAt: Int
 }
 
 extension Credential {
     func isExpired() -> Bool {
-        let expiredDate = Date(timeIntervalSince1970: createdAt + expiresIn)
+        let expiredDate = Date(timeIntervalSince1970: Double(createdAt + expiresIn))
         return Date().compare(expiredDate) == .orderedDescending
     }
 }

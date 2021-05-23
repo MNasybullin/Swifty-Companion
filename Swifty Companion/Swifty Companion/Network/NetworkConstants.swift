@@ -19,6 +19,10 @@ public enum RequestMethod {
     static let get = "GET"
 }
 
+public enum ContentType {
+    static let json = "application/json"
+}
+
 public struct AppParameters: Codable {
     var grant_type = "client_credentials"
     var client_id = "2a1a6448f0b7c176678a27bfdbcea99cf64c46d23b66f3a01d50c0c1205aa168"

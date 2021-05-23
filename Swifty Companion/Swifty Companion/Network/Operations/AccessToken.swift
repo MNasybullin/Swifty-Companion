@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class AccessTokenOperation: Operation {
+final class AccessTokenOperation: AsyncOperation {
 
     // MARK: - Blocks
 
@@ -15,7 +15,7 @@ final class AccessTokenOperation: Operation {
     var failure: ErrorBlock?
 
     // MARK: - Main
-    
+
     override func main() {
         guard let url = Constants.accessTokenUrl else {
             return
@@ -29,6 +29,9 @@ final class AccessTokenOperation: Operation {
         request.httpBody = encodedData
 
         let config = URLSessionConfiguration.default
+        config.httpAdditionalHeaders = [
+            "Content-Type": ContentType.json
+        ]
 
         let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
         let task = session.dataTask(with: request) { [weak self] data, response, errorSession in
@@ -46,8 +49,7 @@ final class AccessTokenOperation: Operation {
             switch statusCode {
                 case 200:
                     if let data = data,
-                       let credentialResponse = try? JSONDecoder().decode(CredentialResponse.self, from: data) {
-                        let credential = Credential(from: credentialResponse)
+                       let credential = try? JSONDecoder().decode(Credential.self, from: data) {
                         self?.success?(credential)
                     } else {
                         let error = NSError(domain: "Credential response error",
