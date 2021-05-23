@@ -17,9 +17,10 @@ class NetworkService: NetworkServiceProtocol {
 
         accessTokenOperation.success = { credential in
             print("credential = ", credential)
+            success?()
         }
         accessTokenOperation.failure = { error in
-            print("error = ", error)
+            failure?(error)
         }
 
         let operationQueue = OperationQueue()

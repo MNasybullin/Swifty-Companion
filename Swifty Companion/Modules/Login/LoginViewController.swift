@@ -106,17 +106,27 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewInputProtocol {
     func activityIndicator(status: Bool) {
-//        DispatchQueue.main.async { [weak self] in
-//            if status == true {
-//                self?.activityIndicatorView?.startAnimating()
-//            } else {
-//                self?.activityIndicatorView?.stopAnimating()
-//            }
-//        }
-        if status == true {
-            networkActivityIndicator.startAnimating()
-        } else {
-            networkActivityIndicator.stopAnimating()
+        DispatchQueue.main.async { [weak self] in
+            if status == true {
+                self?.networkActivityIndicator.startAnimating()
+            } else {
+                self?.networkActivityIndicator.stopAnimating()
+            }
+        }
+    }
+
+    func showErrorAlert(with message: String) {
+        activityIndicator(status: false)
+
+        DispatchQueue.main.async { [weak self] in
+            let alertController = UIAlertController(title: "Error",
+                                                    message: message,
+                                                    preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK",
+                                            style: .cancel,
+                                            handler: nil)
+            alertController.addAction(alertAction)
+            self?.present(alertController, animated: true, completion: nil)
         }
     }
 }

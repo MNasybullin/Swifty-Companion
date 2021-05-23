@@ -21,13 +21,23 @@ final class LoginViewPresenter: LoginViewOutputProtocol {
     // MARK: - LoginViewOutputProtocol
 
     func searchProfile(_ login: String) {
-        input?.activityIndicator(status: true)
-        service.getAccessToken {
-            
-        } failure: { error in
-            
-        }
+        getAccessToken()
+    }
 
+    private func getAccessToken() {
+        input?.activityIndicator(status: true)
+
+        service.getAccessToken { [weak self] in
+            self?.input?.activityIndicator(status: false)
+        } failure: { [weak self] error in
+            var message: String
+            if let nsError = error as NSError? {
+                message = nsError.domain
+            } else {
+                message = "Unknown error"
+            }
+            self?.input?.showErrorAlert(with: message)
+        }
     }
 }
     

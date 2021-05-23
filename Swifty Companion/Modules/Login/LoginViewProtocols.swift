@@ -9,6 +9,7 @@ import Foundation
 
 protocol LoginViewInputProtocol: AnyObject {
     func activityIndicator(status: Bool)
+    func showErrorAlert(with message: String)
 }
 
 protocol LoginViewOutputProtocol: AnyObject {
