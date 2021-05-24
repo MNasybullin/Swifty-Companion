@@ -46,4 +46,23 @@ class NetworkService: NetworkServiceProtocol {
         let operationQueue = OperationQueue()
         operationQueue.addOperation(accessTokenOperation)
     }
+    
+    func getProfileData(login: String, success: ProfileDataBlock?, failure: ErrorBlock?) {
+        guard let credential = credential else {
+            return
+        }
+
+        let profileDataOperation = ProfileDataOperation(credential: credential)
+        profileDataOperation.login = login
+        
+        profileDataOperation.success = { profileData in
+            success?(profileData)
+        }
+        profileDataOperation.failure = { error in
+            failure?(error)
+        }
+
+        let operationQueue = OperationQueue()
+        operationQueue.addOperation(profileDataOperation)
+    }
 }

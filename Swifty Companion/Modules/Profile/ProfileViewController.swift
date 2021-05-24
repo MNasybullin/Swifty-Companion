@@ -9,9 +9,17 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    // MARK: - Public Properties
+
+    var profileData: ProfileData!
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if profileData == nil {
+            fatalError("ProfileViewController: profileData is nil!")
+        }
+        print(profileData)
     }
 }

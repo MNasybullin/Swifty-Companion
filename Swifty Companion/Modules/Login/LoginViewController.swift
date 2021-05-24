@@ -54,7 +54,9 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        output.searchProfile(login)
+        if networkActivityIndicator.isAnimating == false {
+            output.searchProfile(login)
+        }
     }
 
     // MARK: - Keyboard Notifications

@@ -1,5 +1,5 @@
 //
-//  AccessToken.swift
+//  AccessTokenOperation.swift
 //  Swifty Companion
 //
 //  Created by OUT-Nasybullin-MR on 21.05.2021.
