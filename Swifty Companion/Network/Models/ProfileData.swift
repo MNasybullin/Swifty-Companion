@@ -15,9 +15,9 @@ public struct ProfileData: Codable {
         case imageUrl = "image_url"
         case correctionPoint = "correction_point"
         case wallet
-//        case cursusUsers = "cursus_users"
-//        case projectsUsers = "projects_users"
-//        case campus
+        case cursusUsers = "cursus_users"
+        case projectsUsers = "projects_users"
+        case campus
     }
 
     let email: String
@@ -26,21 +26,22 @@ public struct ProfileData: Codable {
     let imageUrl: String
     let correctionPoint: Int
     let wallet: Int
-//    let cursusUsers: [CursusUsers]
-//    let projectsUsers: [ProjectsUsers]
-//    let campus: Campus
+    let cursusUsers: [CursusUsers]
+    let projectsUsers: [ProjectsUsers]
+    let campus: [Campus]
     
 }
 
 public struct CursusUsers: Codable {
     enum CodingKeys: String, CodingKey {
         case level
-        case cursus
         case skills
+        case cursus
     }
+
     let level: Double
-    let cursus: Cursus
     let skills: [Skills]
+    let cursus: Cursus
 }
 
 public struct Cursus: Codable {
@@ -48,6 +49,7 @@ public struct Cursus: Codable {
         case id
         case name
     }
+
     let id: Int
     let name: String
 }
@@ -57,6 +59,7 @@ public struct Skills: Codable {
         case name
         case level
     }
+
     let name: String
     let level: Double
 }
@@ -65,6 +68,7 @@ public struct Campus: Codable {
     enum CodingKeys: String, CodingKey {
         case name
     }
+
     let name: String
 }
 
@@ -74,17 +78,18 @@ public struct ProjectsUsers: Codable {
         case occurrence
         case finalMark = "final_mark"
         case status
-        case validate = "validate?"
+        case validated = "validated?"
         case project
         case cursusIds = "cursus_ids"
     }
+
     let id: Int
     let occurrence: Int
     let finalMark: Int?
     let status: String
-    let validate: Bool?
+    let validated: Bool?
     let project: Project
-    let cursusIds: CursusIds
+    let cursusIds: [Int]
 }
 
 public struct Project: Codable {
@@ -93,14 +98,8 @@ public struct Project: Codable {
         case name
         case parentId = "parent_id"
     }
+
     let id: Int
     let name: String
     let parentId: Int?
-}
-
-public struct CursusIds: Codable {
-    enum CodingKeys: String, CodingKey {
-        case id
-    }
-    let id: [Int]
 }

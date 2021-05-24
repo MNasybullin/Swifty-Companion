@@ -37,7 +37,9 @@ class LoginViewController: UIViewController {
         searchButton.layer.cornerRadius = 5
         searchButton.setBackgroundColor(color: UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.65), forState: .disabled)
         searchButton.setBackgroundColor(color: UIColor(red: 0.25, green: 1, blue: 0.25, alpha: 0.65), forState: .normal)
-        searchButton.isEnabled = false
+
+        historyButton.setTitleColor(.white, for: .normal)
+        historyButton.setTitleColor(.gray, for: .disabled)
     }
 
     // MARK: - Actions
@@ -54,7 +56,6 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        searchButton.isEnabled = false
         output.searchProfile(login)
     }
 
@@ -105,9 +106,12 @@ extension LoginViewController: LoginViewInputProtocol {
         DispatchQueue.main.async { [weak self] in
             if status == true {
                 self?.networkActivityIndicator.startAnimating()
+                self?.searchButton.isEnabled = false
+                self?.historyButton.isEnabled = false
             } else {
                 self?.networkActivityIndicator.stopAnimating()
                 self?.searchButton.isEnabled = true
+                self?.historyButton.isEnabled = true
             }
         }
     }
