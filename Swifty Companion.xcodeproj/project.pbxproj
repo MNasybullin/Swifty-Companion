@@ -24,7 +24,6 @@
 		DD572FD6265949CB007F26CC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD5265949CB007F26CC /* UIButton.swift */; };
 		DD572FD826594AFA007F26CC /* LoginViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD726594AFA007F26CC /* LoginViewProtocols.swift */; };
 		DD572FDA26594B1A007F26CC /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD926594B1A007F26CC /* LoginViewPresenter.swift */; };
-		DD572FDC26599F26007F26CC /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FDB26599F26007F26CC /* AsyncOperation.swift */; };
 		DD738390265B9DD5008A4B71 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73838F265B9DD5008A4B71 /* ProfileData.swift */; };
 		DD738392265BC06C008A4B71 /* ProfileDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD738391265BC06C008A4B71 /* ProfileDataOperation.swift */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 		DD572FD5265949CB007F26CC /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		DD572FD726594AFA007F26CC /* LoginViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocols.swift; sourceTree = "<group>"; };
 		DD572FD926594B1A007F26CC /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
-		DD572FDB26599F26007F26CC /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		DD73838F265B9DD5008A4B71 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		DD738391265BC06C008A4B71 /* ProfileDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,7 +120,6 @@
 				DD572F9626565182007F26CC /* Operations */,
 				DD4CD05126525B4600372C2C /* NetworkService.swift */,
 				DD572FCC2657D03F007F26CC /* NetworkConstants.swift */,
-				DD572FDB26599F26007F26CC /* AsyncOperation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -250,7 +247,6 @@
 				DD572FD22657D253007F26CC /* Credential.swift in Sources */,
 				DD572F9326564F98007F26CC /* ProfileViewController.swift in Sources */,
 				DD572FD02657D1B4007F26CC /* Blocks.swift in Sources */,
-				DD572FDC26599F26007F26CC /* AsyncOperation.swift in Sources */,
 				DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */,
 				DD738390265B9DD5008A4B71 /* ProfileData.swift in Sources */,
 				DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */,

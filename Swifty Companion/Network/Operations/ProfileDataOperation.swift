@@ -7,9 +7,10 @@
 
 import Foundation
 
-final class ProfileDataOperation: AsyncOperation {
+final class ProfileDataOperation: Operation {
     // MARK: - Private Properties
-    private var credential: Credential
+
+    private var credential: Credential?
 
     // MARK: - Blocks
 
@@ -22,7 +23,7 @@ final class ProfileDataOperation: AsyncOperation {
 
     // MARK: - Init
 
-    init(credential: Credential) {
+    init(credential: Credential? = nil) {
         self.credential = credential
         super.init()
     }
@@ -30,9 +31,12 @@ final class ProfileDataOperation: AsyncOperation {
     // MARK: - Main
 
     override func main() {
-        guard let login = login,
+        guard let credential = credential,
+              let login = login,
               let url = URL(string: login,
                             relativeTo: Constants.profileDataUrl) else {
+            print("profile fail")
+            failure?(nil)
             return
         }
         
@@ -47,14 +51,14 @@ final class ProfileDataOperation: AsyncOperation {
         ]
 
         let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
-        let task = session.dataTask(with: request) { [weak self] data, response, errorSession in
+        let task = session.dataTask(with: request) { data, response, errorSession in
             if errorSession != nil {
-                self?.failure?(errorSession)
+                self.failure?(errorSession)
                 return
             }
             guard let response = response as? HTTPURLResponse else {
                 let error = NSError(domain: "Profile data session response error", code: -1, userInfo: nil)
-                self?.failure?(error)
+                self.failure?(error)
                 return
             }
 
@@ -63,41 +67,41 @@ final class ProfileDataOperation: AsyncOperation {
                 case 200:
                     if let data = data,
                        let profileData = try? JSONDecoder().decode(ProfileData.self, from: data) {
-                        self?.success?(profileData)
+                        self.success?(profileData)
                     } else {
                         let error = NSError(domain: "Profile Data response error",
                                             code: -200,
                                             userInfo: nil)
-                        self?.failure?(error)
+                        self.failure?(error)
                     }
                     
                 case 400:
                     let error = NSError(domain: "The request is malformed", code: statusCode, userInfo: nil)
-                    self?.failure?(error)
+                    self.failure?(error)
                 
                 case 401:
                     let error = NSError(domain: "Unauthorized", code: statusCode, userInfo: nil)
-                    self?.failure?(error)
+                    self.failure?(error)
                     
                 case 403:
                     let error = NSError(domain: "Forbidden", code: statusCode, userInfo: nil)
-                    self?.failure?(error)
+                    self.failure?(error)
                     
                 case 404:
                     let error = NSError(domain: "Profile is not found", code: statusCode, userInfo: nil)
-                    self?.failure?(error)
+                    self.failure?(error)
                     
                 case 422:
                     let error = NSError(domain: "Unprocessable entity", code: statusCode, userInfo: nil)
-                    self?.failure?(error)
+                    self.failure?(error)
                     
                 case 500:
                     let error = NSError(domain: "We have a problem with our server. Please try again later.", code: statusCode, userInfo: nil)
-                    self?.failure?(error)
+                    self.failure?(error)
             
                 default:
                     let error = NSError(domain: "Unknown error", code: statusCode, userInfo: nil)
-                    self?.failure?(error)
+                    self.failure?(error)
             }
         }
         task.resume()

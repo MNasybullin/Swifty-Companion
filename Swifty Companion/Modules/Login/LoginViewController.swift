@@ -54,9 +54,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        if networkActivityIndicator.isAnimating == false {
-            output.searchProfile(login)
-        }
+        searchButton.isEnabled = false
+        output.searchProfile(login)
     }
 
     // MARK: - Keyboard Notifications
@@ -108,6 +107,7 @@ extension LoginViewController: LoginViewInputProtocol {
                 self?.networkActivityIndicator.startAnimating()
             } else {
                 self?.networkActivityIndicator.stopAnimating()
+                self?.searchButton.isEnabled = true
             }
         }
     }

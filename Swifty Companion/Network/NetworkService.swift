@@ -8,10 +8,14 @@
 import UIKit
 
 protocol NetworkServiceProtocol {
-    func getAccessToken(success: EmptyBlock?, failure: ErrorBlock?)
+    func getProfile(login: String, success: ProfileDataBlock?, failure: ErrorBlock?)
 }
 
-class NetworkService: NetworkServiceProtocol {
+public protocol CredentialStorage {
+    var credential: Credential? { get }
+}
+
+class NetworkService: NetworkServiceProtocol, CredentialStorage {
     // MARK: - Public Properties
 
     var credential: Credential? {
@@ -31,30 +35,26 @@ class NetworkService: NetworkServiceProtocol {
             self.credential = credential
         }
     }
-
-    func getAccessToken(success: EmptyBlock?, failure: ErrorBlock?) {
-        let accessTokenOperation = AccessTokenOperation()
+    
+    func getProfile(login: String, success: ProfileDataBlock?, failure: ErrorBlock?) {
+        let accessTokenOperation = AccessTokenOperation(credentialStorage: self)
 
         accessTokenOperation.success = { [weak self] credential in
             self?.credential = credential
-            success?()
+            self?.getProfileData(login: login, success: success, failure: failure)
         }
         accessTokenOperation.failure = { error in
             failure?(error)
         }
-
+        
         let operationQueue = OperationQueue()
         operationQueue.addOperation(accessTokenOperation)
     }
     
-    func getProfileData(login: String, success: ProfileDataBlock?, failure: ErrorBlock?) {
-        guard let credential = credential else {
-            return
-        }
-
+    private func getProfileData(login: String, success: ProfileDataBlock?, failure: ErrorBlock?) {
         let profileDataOperation = ProfileDataOperation(credential: credential)
         profileDataOperation.login = login
-        
+
         profileDataOperation.success = { profileData in
             success?(profileData)
         }

@@ -23,32 +23,9 @@ final class LoginViewPresenter: LoginViewOutputProtocol {
     // MARK: - LoginViewOutputProtocol
 
     func searchProfile(_ login: String) {
-        getAccessToken()
-        getProfileData(login)
-    }
-
-    private func getAccessToken() {
-        if service.credential == nil || service.credential?.isExpired() == true {
-            input?.activityIndicator(status: true)
-
-            service.getAccessToken { [weak self] in
-                self?.input?.activityIndicator(status: false)
-            } failure: { [weak self] error in
-                var message: String
-                if let nsError = error as NSError? {
-                    message = nsError.domain
-                } else {
-                    message = "Unknown error"
-                }
-                self?.input?.showErrorAlert(with: message)
-            }
-        }
-    }
-    
-    private func getProfileData(_ login: String) {
         input?.activityIndicator(status: true)
 
-        service.getProfileData(login: login) { [weak self] profileData in
+        service.getProfile(login: login) { [weak self] profileData in
             self?.input?.activityIndicator(status: false)
             self?.showProfileScreen(data: profileData)
         } failure: { [weak self] error in
@@ -60,7 +37,6 @@ final class LoginViewPresenter: LoginViewOutputProtocol {
             }
             self?.input?.showErrorAlert(with: message)
         }
-
     }
 
     private func showProfileScreen(data: ProfileData) {
