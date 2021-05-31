@@ -5,6 +5,7 @@
 //  Created by OUT-Nasybullin-MR on 24.05.2021.
 //
 
+import UIKit
 import Foundation
 
 public struct ProfileData: Codable {
@@ -13,6 +14,7 @@ public struct ProfileData: Codable {
         case login
         case displayName = "displayname"
         case imageUrl = "image_url"
+        case imageData
         case correctionPoint = "correction_point"
         case wallet
         case cursusUsers = "cursus_users"
@@ -24,6 +26,7 @@ public struct ProfileData: Codable {
     let login: String
     let displayName: String
     let imageUrl: String
+    var imageData: Data?
     let correctionPoint: Int
     let wallet: Int
     let cursusUsers: [CursusUsers]

@@ -35,7 +35,7 @@ class NetworkService: NetworkServiceProtocol, CredentialStorage {
             self.credential = credential
         }
     }
-    
+
     func getProfile(login: String, success: ProfileDataBlock?, failure: ErrorBlock?) {
         let accessTokenOperation = AccessTokenOperation(credentialStorage: self)
 
@@ -50,13 +50,13 @@ class NetworkService: NetworkServiceProtocol, CredentialStorage {
         let operationQueue = OperationQueue()
         operationQueue.addOperation(accessTokenOperation)
     }
-    
+
     private func getProfileData(login: String, success: ProfileDataBlock?, failure: ErrorBlock?) {
         let profileDataOperation = ProfileDataOperation(credential: credential)
         profileDataOperation.login = login
 
-        profileDataOperation.success = { profileData in
-            success?(profileData)
+        profileDataOperation.success = { [weak self] profileData in
+            self?.getImageData(profileData: profileData, success: success, failure: failure)
         }
         profileDataOperation.failure = { error in
             failure?(error)
@@ -64,5 +64,22 @@ class NetworkService: NetworkServiceProtocol, CredentialStorage {
 
         let operationQueue = OperationQueue()
         operationQueue.addOperation(profileDataOperation)
+    }
+
+    private func getImageData(profileData: ProfileData, success: ProfileDataBlock?, failure: ErrorBlock?) {
+        let imageDataOperation = ImageDataOperation(imageUrl: profileData.imageUrl)
+
+        imageDataOperation.success = { data in
+            var newProfileData = profileData
+            newProfileData.imageData = data
+            success?(newProfileData)
+        }
+
+        imageDataOperation.failure = { error in
+            failure?(error)
+        }
+
+        let operationQueue = OperationQueue()
+        operationQueue.addOperation(imageDataOperation)
     }
 }

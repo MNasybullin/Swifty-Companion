@@ -41,7 +41,7 @@ final class LoginViewPresenter: LoginViewOutputProtocol {
 
     private func showProfileScreen(data: ProfileData) {
         DispatchQueue.main.async { [weak self] in
-            if let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController {
+            if let viewController = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
                 viewController.profileData = data
                 self?.navigationController?.pushViewController(viewController, animated: true)
                }
