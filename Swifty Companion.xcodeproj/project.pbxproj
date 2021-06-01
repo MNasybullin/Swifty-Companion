@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DD03ACF92666635D00A28BD3 /* ProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03ACF82666635D00A28BD3 /* ProfileModels.swift */; };
+		DD03ACFB2666646200A28BD3 /* ProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03ACFA2666646200A28BD3 /* ProfileViewPresenter.swift */; };
+		DD03ACFD2666648F00A28BD3 /* ProfileViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03ACFC2666648F00A28BD3 /* ProfileViewProtocols.swift */; };
+		DD03AD002666835000A28BD3 /* DefaultHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD03ACFF2666835000A28BD3 /* DefaultHeader.xib */; };
+		DD03AD022666836000A28BD3 /* DefaultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03AD012666836000A28BD3 /* DefaultHeaderView.swift */; };
+		DD03AD042666840400A28BD3 /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03AD032666840400A28BD3 /* UIVIew.swift */; };
 		DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD03D2652593200372C2C /* AppDelegate.swift */; };
 		DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD03F2652593200372C2C /* SceneDelegate.swift */; };
 		DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD0412652593200372C2C /* LoginViewController.swift */; };
@@ -18,8 +23,8 @@
 		DD53366A2664D7BE00AF9952 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5336692664D7BE00AF9952 /* History.storyboard */; };
 		DD53366C2664D7D700AF9952 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53366B2664D7D700AF9952 /* HistoryViewController.swift */; };
 		DD53366E2664F70F00AF9952 /* ImageDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53366D2664F70F00AF9952 /* ImageDataOperation.swift */; };
-		DD5336702665015F00AF9952 /* ProfileInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53366F2665015F00AF9952 /* ProfileInfo.xib */; };
-		DD53367226650F6900AF9952 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53367126650F6900AF9952 /* ProfileInfoView.swift */; };
+		DD5336702665015F00AF9952 /* ProfileInfoHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD53366F2665015F00AF9952 /* ProfileInfoHeader.xib */; };
+		DD53367226650F6900AF9952 /* ProfileInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53367126650F6900AF9952 /* ProfileInfoHeaderView.swift */; };
 		DD572F7C2655A14C007F26CC /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */; };
 		DD572F9326564F98007F26CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572F9226564F98007F26CC /* ProfileViewController.swift */; };
 		DD572F9526564FA3007F26CC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD572F9426564FA2007F26CC /* Profile.storyboard */; };
@@ -36,6 +41,11 @@
 
 /* Begin PBXFileReference section */
 		DD03ACF82666635D00A28BD3 /* ProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModels.swift; sourceTree = "<group>"; };
+		DD03ACFA2666646200A28BD3 /* ProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenter.swift; sourceTree = "<group>"; };
+		DD03ACFC2666648F00A28BD3 /* ProfileViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewProtocols.swift; sourceTree = "<group>"; };
+		DD03ACFF2666835000A28BD3 /* DefaultHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultHeader.xib; sourceTree = "<group>"; };
+		DD03AD012666836000A28BD3 /* DefaultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHeaderView.swift; sourceTree = "<group>"; };
+		DD03AD032666840400A28BD3 /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
 		DD4CD03A2652593200372C2C /* Swifty Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4CD03D2652593200372C2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD4CD03F2652593200372C2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +58,8 @@
 		DD5336692664D7BE00AF9952 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		DD53366B2664D7D700AF9952 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		DD53366D2664F70F00AF9952 /* ImageDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataOperation.swift; sourceTree = "<group>"; };
-		DD53366F2665015F00AF9952 /* ProfileInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfo.xib; sourceTree = "<group>"; };
-		DD53367126650F6900AF9952 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
+		DD53366F2665015F00AF9952 /* ProfileInfoHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoHeader.xib; sourceTree = "<group>"; };
+		DD53367126650F6900AF9952 /* ProfileInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderView.swift; sourceTree = "<group>"; };
 		DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		DD572F9226564F98007F26CC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DD572F9426564FA2007F26CC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -75,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD03ACFE2666831F00A28BD3 /* DefaultHeader */ = {
+			isa = PBXGroup;
+			children = (
+				DD03ACFF2666835000A28BD3 /* DefaultHeader.xib */,
+				DD03AD012666836000A28BD3 /* DefaultHeaderView.swift */,
+			);
+			path = DefaultHeader;
+			sourceTree = "<group>";
+		};
 		DD4CD0312652593100372C2C = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +135,13 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		DD53367326650FB600AF9952 /* ProfileInfo */ = {
+		DD53367326650FB600AF9952 /* ProfileInfoHeader */ = {
 			isa = PBXGroup;
 			children = (
-				DD53366F2665015F00AF9952 /* ProfileInfo.xib */,
-				DD53367126650F6900AF9952 /* ProfileInfoView.swift */,
+				DD53366F2665015F00AF9952 /* ProfileInfoHeader.xib */,
+				DD53367126650F6900AF9952 /* ProfileInfoHeaderView.swift */,
 			);
-			path = ProfileInfo;
+			path = ProfileInfoHeader;
 			sourceTree = "<group>";
 		};
 		DD572F7A2655A12F007F26CC /* Extensions */ = {
@@ -130,6 +149,7 @@
 			children = (
 				DD572F7B2655A14C007F26CC /* UIViewController+Keyboard.swift */,
 				DD572FD5265949CB007F26CC /* UIButton.swift */,
+				DD03AD032666840400A28BD3 /* UIVIew.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,10 +189,13 @@
 		DD572F9126564F81007F26CC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				DD53367326650FB600AF9952 /* ProfileInfo */,
+				DD03ACFC2666648F00A28BD3 /* ProfileViewProtocols.swift */,
+				DD03ACFA2666646200A28BD3 /* ProfileViewPresenter.swift */,
 				DD572F9226564F98007F26CC /* ProfileViewController.swift */,
 				DD572F9426564FA2007F26CC /* Profile.storyboard */,
 				DD03ACF82666635D00A28BD3 /* ProfileModels.swift */,
+				DD03ACFE2666831F00A28BD3 /* DefaultHeader */,
+				DD53367326650FB600AF9952 /* ProfileInfoHeader */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -262,9 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4CD04A2652593E00372C2C /* LaunchScreen.storyboard in Resources */,
-				DD5336702665015F00AF9952 /* ProfileInfo.xib in Resources */,
+				DD5336702665015F00AF9952 /* ProfileInfoHeader.xib in Resources */,
 				DD4CD0472652593E00372C2C /* Assets.xcassets in Resources */,
 				DD572F9526564FA3007F26CC /* Profile.storyboard in Resources */,
+				DD03AD002666835000A28BD3 /* DefaultHeader.xib in Resources */,
 				DD53366A2664D7BE00AF9952 /* History.storyboard in Resources */,
 				DD4CD0452652593200372C2C /* Login.storyboard in Resources */,
 			);
@@ -278,9 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD572FD826594AFA007F26CC /* LoginViewProtocols.swift in Sources */,
+				DD03ACFB2666646200A28BD3 /* ProfileViewPresenter.swift in Sources */,
 				DD572FCD2657D03F007F26CC /* NetworkConstants.swift in Sources */,
 				DD572FCB2657CE2D007F26CC /* AccessTokenOperation.swift in Sources */,
-				DD53367226650F6900AF9952 /* ProfileInfoView.swift in Sources */,
+				DD53367226650F6900AF9952 /* ProfileInfoHeaderView.swift in Sources */,
 				DD572FD22657D253007F26CC /* Credential.swift in Sources */,
 				DD572F9326564F98007F26CC /* ProfileViewController.swift in Sources */,
 				DD572FD02657D1B4007F26CC /* Blocks.swift in Sources */,
@@ -289,11 +314,14 @@
 				DD53366E2664F70F00AF9952 /* ImageDataOperation.swift in Sources */,
 				DD738390265B9DD5008A4B71 /* ProfileData.swift in Sources */,
 				DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */,
+				DD03AD042666840400A28BD3 /* UIVIew.swift in Sources */,
 				DD03ACF92666635D00A28BD3 /* ProfileModels.swift in Sources */,
 				DD738392265BC06C008A4B71 /* ProfileDataOperation.swift in Sources */,
 				DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */,
 				DD4CD05226525B4600372C2C /* NetworkService.swift in Sources */,
+				DD03ACFD2666648F00A28BD3 /* ProfileViewProtocols.swift in Sources */,
 				DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */,
+				DD03AD022666836000A28BD3 /* DefaultHeaderView.swift in Sources */,
 				DD572FD6265949CB007F26CC /* UIButton.swift in Sources */,
 				DD572FDA26594B1A007F26CC /* LoginViewPresenter.swift in Sources */,
 			);

@@ -11,8 +11,7 @@ struct CommonData {
     var email: String
     var login: String
     var displayName: String
-    var imageUrl: String
-    var imageData: Data
+    var imageData: Data?
     var correctionPoint: Int
     var wallet: Int
     var campusName: String

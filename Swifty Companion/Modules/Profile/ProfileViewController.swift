@@ -8,13 +8,22 @@
 import UIKit
 
 class ProfileViewController: UITableViewController {
+    // MARK: - Private
+
+    private var output: ProfileViewOutputProtocol!
+
+    // MARK: - Section Views
+
+    var profileInfoHeader: ProfileInfoHeaderView!
+    var skillsHeader: DefaultHeaderView!
+    var projectsHeader: DefaultHeaderView!
 
     // MARK: - Public Properties
 
     var profileData: ProfileData!
-    
-    // MARK: - Section Views
-    var profileInfo: ProfileInfoView!
+    var commonData: CommonData!
+    var cursusData: [CursusData]!
+    var currentCursus: CursusData!
 
     // MARK: - Life Cycle
 
@@ -23,31 +32,64 @@ class ProfileViewController: UITableViewController {
         if profileData == nil {
             fatalError("ProfileViewController: profileData is nil!")
         }
-
+        output = ProfileViewPresenter(input: self, navigationController: navigationController)
+        
+        let asd = output.dataConfigure(profileData)
+        screenConfigure()
+    }
+    
+    func screenConfigure() {
         navigationItem.largeTitleDisplayMode = .never
-        profileInfo = ProfileInfoView()
-        profileInfo.displayNameLabel.text = profileData.displayName
+        //
+        profileInfoHeader = ProfileInfoHeaderView()
+        profileInfoHeader.displayNameLabel.text = profileData.displayName
+        //
+        
+        skillsHeader = DefaultHeaderView()
+        skillsHeader.titleLabel.text = "SKILLS"
+        
+        projectsHeader = DefaultHeaderView()
+        projectsHeader.titleLabel.text = "PROJECTS"
     }
 
     // MARK: - UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 240
+        if section == 0 {
+            return 240
+        } else {
+            return 51
+        }
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            return profileInfo
+        switch section {
+            case 0:
+                return profileInfoHeader
+            case 1:
+                return projectsHeader
+            case 2:
+                return skillsHeader
+            default:
+                return nil
         }
-        return UIView()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        switch section {
+            case 0:
+                return 0
+            case 1:
+                return currentCursus.projectsUsers.count // TODO исправить по кол-ву children
+            case 2:
+                return currentCursus.skills.count
+            default:
+                return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,4 +104,9 @@ class ProfileViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
 
     }
+}
+
+// MARK: - Input Protocol
+
+extension ProfileViewController: ProfileViewInputProtocol {
 }
