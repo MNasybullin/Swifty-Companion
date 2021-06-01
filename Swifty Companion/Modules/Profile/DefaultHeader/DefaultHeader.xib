@@ -30,8 +30,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eyf-Ic-Rlr" secondAttribute="trailing" constant="15" id="IXC-AN-Luf"/>
-                <constraint firstItem="eyf-Ic-Rlr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="JRe-Te-Of0"/>
+                <constraint firstAttribute="trailing" secondItem="eyf-Ic-Rlr" secondAttribute="trailing" constant="15" id="IXC-AN-Luf"/>
+                <constraint firstItem="eyf-Ic-Rlr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="JRe-Te-Of0"/>
                 <constraint firstAttribute="bottom" secondItem="eyf-Ic-Rlr" secondAttribute="bottom" constant="15" id="TBp-Yc-SFJ"/>
                 <constraint firstItem="eyf-Ic-Rlr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="uZg-yP-sGs"/>
             </constraints>
