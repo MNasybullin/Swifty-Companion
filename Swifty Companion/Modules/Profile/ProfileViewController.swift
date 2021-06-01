@@ -33,18 +33,29 @@ class ProfileViewController: UITableViewController {
             fatalError("ProfileViewController: profileData is nil!")
         }
         output = ProfileViewPresenter(input: self, navigationController: navigationController)
-        
-        let asd = output.dataConfigure(profileData)
+
+        (commonData, cursusData) = output.dataConfigure(profileData)
+        currentCursus = cursusData.first
         screenConfigure()
     }
     
     func screenConfigure() {
         navigationItem.largeTitleDisplayMode = .never
-        //
+
         profileInfoHeader = ProfileInfoHeaderView()
-        profileInfoHeader.displayNameLabel.text = profileData.displayName
-        //
-        
+        profileInfoHeader.displayNameLabel.text = commonData.displayName
+        profileInfoHeader.walletLabel.text = String(commonData.wallet)
+        profileInfoHeader.evaluationPointsLabel.text = String(commonData.correctionPoint)
+        profileInfoHeader.emailLabel.text = commonData.email
+        profileInfoHeader.campusLabel.text = commonData.campusName
+
+        let levelIntLiteral = currentCursus.level.rounded(.down)
+        let levelHundredsInt = (currentCursus.level - levelIntLiteral) * 100
+        profileInfoHeader.levelLabel.text = "level \(Int(levelIntLiteral)) - \(Int(levelHundredsInt.rounded()))%"
+
+        profileInfoHeader.levelProgressView.progress = Float(levelHundredsInt)
+        profileInfoHeader.cursusButton.titleLabel?.text = currentCursus.cursus.name
+
         skillsHeader = DefaultHeaderView()
         skillsHeader.titleLabel.text = "SKILLS"
         
@@ -84,7 +95,7 @@ class ProfileViewController: UITableViewController {
             case 0:
                 return 0
             case 1:
-                return currentCursus.projectsUsers.count // TODO исправить по кол-ву children
+                return currentCursus.projects.count
             case 2:
                 return currentCursus.skills.count
             default:

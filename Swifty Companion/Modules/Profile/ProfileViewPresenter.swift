@@ -33,15 +33,21 @@ final class ProfileViewPresenter: ProfileViewOutputProtocol {
 
         for cursus in data.cursusUsers {
             var projects = [ProjectsUsers]()
+            var projectsChildren = [ProjectsUsers]()
 
             for project in data.projectsUsers where project.cursusIds.contains(cursus.cursus.id) {
-                projects.append(project)
+                if project.project.parentId == nil {
+                    projects.append(project)
+                } else {
+                    projectsChildren.append(project)
+                }
             }
 
             let course = CursusData(level: cursus.level,
                                     skills: cursus.skills,
                                     cursus: cursus.cursus,
-                                    projectsUsers: projects)
+                                    projects: projects,
+                                    projectsChildren: projectsChildren)
             cursusData.append(course)
         }
 

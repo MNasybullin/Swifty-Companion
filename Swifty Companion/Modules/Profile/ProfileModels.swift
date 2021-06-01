@@ -21,5 +21,6 @@ struct CursusData {
     var level: Double
     var skills: [Skills]
     var cursus: Cursus
-    var projectsUsers: [ProjectsUsers]
+    var projects: [ProjectsUsers]
+    var projectsChildren: [ProjectsUsers]
 }

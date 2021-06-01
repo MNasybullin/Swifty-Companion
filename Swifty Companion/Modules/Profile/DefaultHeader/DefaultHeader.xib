@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyf-Ic-Rlr">
-                    <rect key="frame" x="15" y="15" width="53" height="26"/>
+                    <rect key="frame" x="15" y="15" width="443" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -30,7 +30,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eyf-Ic-Rlr" secondAttribute="trailing" constant="15" id="IXC-AN-Luf"/>
                 <constraint firstItem="eyf-Ic-Rlr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="JRe-Te-Of0"/>
+                <constraint firstAttribute="bottom" secondItem="eyf-Ic-Rlr" secondAttribute="bottom" constant="15" id="TBp-Yc-SFJ"/>
                 <constraint firstItem="eyf-Ic-Rlr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="uZg-yP-sGs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
