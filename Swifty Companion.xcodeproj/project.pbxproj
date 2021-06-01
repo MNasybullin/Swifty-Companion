@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD03ACF92666635D00A28BD3 /* ProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03ACF82666635D00A28BD3 /* ProfileModels.swift */; };
 		DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD03D2652593200372C2C /* AppDelegate.swift */; };
 		DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD03F2652593200372C2C /* SceneDelegate.swift */; };
 		DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CD0412652593200372C2C /* LoginViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD03ACF82666635D00A28BD3 /* ProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModels.swift; sourceTree = "<group>"; };
 		DD4CD03A2652593200372C2C /* Swifty Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4CD03D2652593200372C2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD4CD03F2652593200372C2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				DD53367326650FB600AF9952 /* ProfileInfo */,
 				DD572F9226564F98007F26CC /* ProfileViewController.swift */,
 				DD572F9426564FA2007F26CC /* Profile.storyboard */,
+				DD03ACF82666635D00A28BD3 /* ProfileModels.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				DD53366E2664F70F00AF9952 /* ImageDataOperation.swift in Sources */,
 				DD738390265B9DD5008A4B71 /* ProfileData.swift in Sources */,
 				DD4CD0422652593200372C2C /* LoginViewController.swift in Sources */,
+				DD03ACF92666635D00A28BD3 /* ProfileModels.swift in Sources */,
 				DD738392265BC06C008A4B71 /* ProfileDataOperation.swift in Sources */,
 				DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */,
 				DD4CD05226525B4600372C2C /* NetworkService.swift in Sources */,
