@@ -35,7 +35,6 @@ final class ProfileDataOperation: Operation {
               let login = login,
               let url = URL(string: login,
                             relativeTo: Constants.profileDataUrl) else {
-            print("profile fail")
             failure?(nil)
             return
         }

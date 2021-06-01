@@ -14,7 +14,7 @@ final class AccessTokenOperation: Operation {
 
     // MARK: - Blocks
 
-    var success: CredentialBlock?
+    var success: OptionalCredentialBlock?
     var failure: ErrorBlock?
 
     // MARK: - Init
@@ -28,10 +28,11 @@ final class AccessTokenOperation: Operation {
 
     override func main() {
         if credentialStorage.credential != nil && credentialStorage.credential?.isExpired() == false {
-            success?(credentialStorage.credential!)
+            success?(nil)
             return
         }
         guard let url = Constants.accessTokenUrl else {
+            failure?(nil)
             return
         }
 

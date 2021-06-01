@@ -32,7 +32,6 @@ final class ImageDataOperation: Operation {
 
     override func main() {
         guard let url = URL(string: imageUrl) else {
-            print("Image Data fail")
             failure?(nil)
             return
         }

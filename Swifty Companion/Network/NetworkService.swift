@@ -40,7 +40,9 @@ class NetworkService: NetworkServiceProtocol, CredentialStorage {
         let accessTokenOperation = AccessTokenOperation(credentialStorage: self)
 
         accessTokenOperation.success = { [weak self] credential in
-            self?.credential = credential
+            if credential != nil {
+                self?.credential = credential
+            }
             self?.getProfileData(login: login, success: success, failure: failure)
         }
         accessTokenOperation.failure = { error in
