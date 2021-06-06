@@ -19,7 +19,8 @@ class ProfileInfoHeaderView: UIView {
     @IBOutlet var campusLabel: UILabel!
     @IBOutlet var cursusButton: UIButton!
     @IBOutlet var levelProgressView: UIProgressView!
-    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet var levelLabel: UILabel!
+    var buttonAction: EmptyBlock!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,10 +34,30 @@ class ProfileInfoHeaderView: UIView {
 
     func commonInit() {
         Bundle.main.loadNibNamed("ProfileInfoHeader", owner: self, options: nil)
-        contentView.fixInView(self)
+        contentView.constraintIn(self, top: 4, bottom: -4, leading: 4, trailing: -4)
+        screenConfigure()
+    }
+    
+    func screenConfigure() {
+        contentView.layer.cornerRadius = 15
+        contentView.backgroundColor? = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 0.45)
+        
+        profileImage.layer.cornerRadius = 10
+        
+        cursusButton.layer.cornerRadius = 5
+        cursusButton.setBackgroundColor(color: UIColor(red: 0, green: 0, blue: 0, alpha: 1), forState: .disabled)
+        cursusButton.setBackgroundColor(color: UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1), forState: .normal)
+        cursusButton.tintColor = .white
+        
+        levelLabel.textColor = .white
+        
+        levelProgressView.backgroundColor = .black
+        levelProgressView.layer.cornerRadius = 15
+        levelProgressView.progressTintColor = .systemPurple
+        levelProgressView.clipsToBounds = true
     }
 
     @IBAction func cursusButtonAction(_ sender: UIButton) {
-        print("button pressed")
+        buttonAction()
     }
 }

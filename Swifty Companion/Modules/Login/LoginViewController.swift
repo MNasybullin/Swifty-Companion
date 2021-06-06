@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         configureNotificationCenter()
         screenConfigure()
+        loginTextField.insertText("sdiego") // TODO - test
     }
     
     func screenConfigure() {

@@ -93,6 +93,7 @@ public struct ProjectsUsers: Codable {
     let validated: Bool?
     let project: Project
     let cursusIds: [Int]
+    var children = [ProjectsUsers]()
 }
 
 public struct Project: Codable {

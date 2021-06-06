@@ -25,7 +25,15 @@ class DefaultHeaderView: UIView {
 
     func commonInit() {
         Bundle.main.loadNibNamed("DefaultHeader", owner: self, options: nil)
-        contentView.fixInView(self)
+        contentView.constraintIn(self, top: 4, bottom: -4, leading: 4, trailing: -4)
+        screenConfigure()
+    }
+    
+    func screenConfigure() {
+        contentView.layer.cornerRadius = 15
+        contentView.backgroundColor? = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 0.45)
+        
+        titleLabel.textColor = .white
     }
 
 }

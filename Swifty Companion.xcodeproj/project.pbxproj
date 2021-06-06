@@ -37,6 +37,10 @@
 		DD572FDA26594B1A007F26CC /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD572FD926594B1A007F26CC /* LoginViewPresenter.swift */; };
 		DD738390265B9DD5008A4B71 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73838F265B9DD5008A4B71 /* ProfileData.swift */; };
 		DD738392265BC06C008A4B71 /* ProfileDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD738391265BC06C008A4B71 /* ProfileDataOperation.swift */; };
+		DD74C0D7266B7D8100FA03B6 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74C0D5266B7D8100FA03B6 /* ProjectCell.swift */; };
+		DD74C0D8266B7D8100FA03B6 /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD74C0D6266B7D8100FA03B6 /* ProjectCell.xib */; };
+		DD74C0DC266CEDDE00FA03B6 /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74C0DA266CEDDE00FA03B6 /* SkillCell.swift */; };
+		DD74C0DD266CEDDE00FA03B6 /* SkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD74C0DB266CEDDE00FA03B6 /* SkillCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		DD572FD926594B1A007F26CC /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		DD73838F265B9DD5008A4B71 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		DD738391265BC06C008A4B71 /* ProfileDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataOperation.swift; sourceTree = "<group>"; };
+		DD74C0D5266B7D8100FA03B6 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		DD74C0D6266B7D8100FA03B6 /* ProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCell.xib; sourceTree = "<group>"; };
+		DD74C0DA266CEDDE00FA03B6 /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
+		DD74C0DB266CEDDE00FA03B6 /* SkillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +202,8 @@
 				DD572F9226564F98007F26CC /* ProfileViewController.swift */,
 				DD572F9426564FA2007F26CC /* Profile.storyboard */,
 				DD03ACF82666635D00A28BD3 /* ProfileModels.swift */,
+				DD74C0D9266CEDB600FA03B6 /* SkillCell */,
+				DD74C0CC266B726200FA03B6 /* ProjectCell */,
 				DD03ACFE2666831F00A28BD3 /* DefaultHeader */,
 				DD53367326650FB600AF9952 /* ProfileInfoHeader */,
 			);
@@ -225,6 +235,24 @@
 				DD572FCF2657D1B4007F26CC /* Blocks.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		DD74C0CC266B726200FA03B6 /* ProjectCell */ = {
+			isa = PBXGroup;
+			children = (
+				DD74C0D5266B7D8100FA03B6 /* ProjectCell.swift */,
+				DD74C0D6266B7D8100FA03B6 /* ProjectCell.xib */,
+			);
+			path = ProjectCell;
+			sourceTree = "<group>";
+		};
+		DD74C0D9266CEDB600FA03B6 /* SkillCell */ = {
+			isa = PBXGroup;
+			children = (
+				DD74C0DA266CEDDE00FA03B6 /* SkillCell.swift */,
+				DD74C0DB266CEDDE00FA03B6 /* SkillCell.xib */,
+			);
+			path = SkillCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,9 +316,11 @@
 				DD5336702665015F00AF9952 /* ProfileInfoHeader.xib in Resources */,
 				DD4CD0472652593E00372C2C /* Assets.xcassets in Resources */,
 				DD572F9526564FA3007F26CC /* Profile.storyboard in Resources */,
+				DD74C0DD266CEDDE00FA03B6 /* SkillCell.xib in Resources */,
 				DD03AD002666835000A28BD3 /* DefaultHeader.xib in Resources */,
 				DD53366A2664D7BE00AF9952 /* History.storyboard in Resources */,
 				DD4CD0452652593200372C2C /* Login.storyboard in Resources */,
+				DD74C0D8266B7D8100FA03B6 /* ProjectCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +350,8 @@
 				DD4CD03E2652593200372C2C /* AppDelegate.swift in Sources */,
 				DD4CD05226525B4600372C2C /* NetworkService.swift in Sources */,
 				DD03ACFD2666648F00A28BD3 /* ProfileViewProtocols.swift in Sources */,
+				DD74C0DC266CEDDE00FA03B6 /* SkillCell.swift in Sources */,
+				DD74C0D7266B7D8100FA03B6 /* ProjectCell.swift in Sources */,
 				DD4CD0402652593200372C2C /* SceneDelegate.swift in Sources */,
 				DD03AD022666836000A28BD3 /* DefaultHeaderView.swift in Sources */,
 				DD572FD6265949CB007F26CC /* UIButton.swift in Sources */,
