@@ -78,7 +78,6 @@ public struct Campus: Codable {
 public struct ProjectsUsers: Codable {
     enum CodingKeys: String, CodingKey {
         case id
-//        case occurrence
         case finalMark = "final_mark"
         case status
         case validated = "validated?"
@@ -87,7 +86,6 @@ public struct ProjectsUsers: Codable {
     }
 
     let id: Int
-//    let occurrence: Int
     let finalMark: Int?
     let status: String
     let validated: Bool?

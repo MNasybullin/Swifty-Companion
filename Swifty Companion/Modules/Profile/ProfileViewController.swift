@@ -174,10 +174,10 @@ class ProfileViewController: UITableViewController {
         
         let row = indexPath.row
         
-        if !currentCursus.projects[row].children.isEmpty {
-            let imageView = UIImageView(image: UIImage(systemName: "chevron.down.square")?.withTintColor(.white, renderingMode: .alwaysOriginal))
-            cell.accessoryView = imageView
-        }
+//        if !currentCursus.projects[row].children.isEmpty {
+//            let imageView = UIImageView(image: UIImage(systemName: "chevron.down.square")?.withTintColor(.white, renderingMode: .alwaysOriginal))
+//            cell.accessoryView = imageView
+//        }
 
         cell.titleLabel.text = currentCursus.projects[row].project.name
         if currentCursus.projects[row].finalMark != nil {
@@ -193,7 +193,6 @@ class ProfileViewController: UITableViewController {
             cell.markLabel.isHidden = true
             cell.clockImage.isHidden = false
         }
-
         return cell
     }
     
